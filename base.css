@@ -1,0 +1,175 @@
+/* リストを初期化 */
+li{
+    list-style: none!important;
+}
+
+/* ボタンを初期化 */
+button{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+/* aタグの下線を除外 */
+a{
+    text-decoration: none!important;
+}
+
+/* 手型のカーソルにする */
+.cursor-pointer:hover{
+    cursor: pointer;
+    cursor: hand;
+}
+
+/* ブートストラップのカスタマイズ */
+.custom-tooltip{
+    --bs-tooltip-max-width: 100%;
+    --bs-tooltip-bg: var(--bs-primary);
+}
+
+/* エラーメッセージ表示用 */
+.errorMessage {
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: var(--bs-danger);
+    background-image: var(--bs-gradient)!important;
+    border-radius: var(--bs-border-radius-lg)!important;
+}
+
+.errorMessage:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 15px solid transparent;
+    border-top: 15px solid var(--bs-danger);
+    margin-left: -15px;
+    background-image: var(--bs-gradient)!important;
+}
+
+/* 処理中表示用 */
+.verifying {
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: var(--bs-warning);
+    background-image: var(--bs-gradient)!important;
+    border-radius: var(--bs-border-radius-lg)!important;
+}
+
+.verifying:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 15px solid transparent;
+    border-top: 15px solid var(--bs-warning);
+    margin-left: -15px;
+    background-image: var(--bs-gradient)!important;
+}
+
+/* インプット要素といっしょに使うラベル */
+.label{
+    display: block!important;
+    text-align: justify!important;
+    text-align-last: justify!important;
+    font-weight: 700!important;
+}
+
+.text-indent{
+    text-indent: 1rem!important;
+}
+
+/* ブートストラップのカードに影をつける用 */
+.shadow-sm-above {
+    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    -moz-appearance:textfield !important;
+    appearance: none !important;
+    margin: 0 !important;
+}
+
+.modal-image {
+    max-width: 100%; /* 画像の最大幅をモーダルの幅に合わせる */
+    height: auto; /* 高さは自動的に調整 */
+}
+
+/* クリックしたら詳細を表示するためのもの（アコーディオン的なやつ） */
+.arrow-right::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-top: 2px solid var(--bs-primary);
+    border-right: 2px solid var(--bs-primary);
+    transform: rotate(45deg);
+    position:relative;
+    top:-2px;
+}
+
+.arrow-down::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 2px solid var(--bs-primary);
+    border-bottom: 2px solid var(--bs-primary);
+    transform: rotate(45deg);
+    position:relative;
+    top:-2px;
+}
+
+/* SweetAlert2 ボタンの配置を変更する */
+.swal2-actions {
+    display: flex;
+    flex-direction: row-reverse; /* ボタンの順序を逆にする */
+}
+
+.swal2-confirm {
+    order: 1; /* 「OK」ボタンを左に配置 */
+}
+
+.swal2-cancel {
+    order: 2; /* 「キャンセル」ボタンを右に配置 */
+}
+
+/* フォームのエラー表示枠 */
+.error_list{
+    max-width: 500px!important;
+}
+
+/* ラインのQRコード */
+.line-qr{
+    max-width: 100px!important;
+}
+
+/* レスポンシブ用 */
+@media (max-width:991px){
+    .lg-text-center{
+        text-align: center!important;
+    }
+}
+
+@media (max-width:767px){
+    .md-text-center{
+        text-align: center!important;
+    }
+}
+
+@media (max-width:575px){
+    .sm-text-center{
+        text-align: center!important;
+    }
+}

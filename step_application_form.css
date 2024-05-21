@@ -1,0 +1,43 @@
+@media print {
+
+    /* 受付シール貼る用のスペース */
+    .print_per_section{
+        margin-top:180px;
+    }
+}
+
+/* タイトルと不動産の表示以外 */
+.print_per_section > *:not(:first-child):not(:last-child) {
+    display: flex!important;
+}
+
+/* 各不動産の表示 */
+.print_per_section > :last-child > div > *{
+    display: flex!important;
+}
+
+.property{
+    margin-left: 1rem!important;
+}
+
+.property:not(:first-child){
+    margin-top: 1rem!important;
+}
+
+/* 登記の目的、原因、相続人、添付情報の幅 */
+.headword{
+    width: 115px!important;
+    display: block!important;
+    text-align: justify!important;
+    text-align-last: justify!important;
+}
+
+.headword + * {
+    margin-left:1rem!important;
+}
+
+@media screen {
+    .print_per_section > *:not(:first-child){
+        margin-left: 50px;
+    }
+}

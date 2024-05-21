@@ -1,0 +1,16 @@
+/* 記から委任文言まで */
+.overview li{
+    display: flex!important;
+}
+
+.overview  li > div:not(:first-child) {
+    margin-left: 1rem!important;
+}
+
+/* 登記の目的、原因、相続人 */
+.headword{
+    width: 100px!important;
+    display: block!important;
+    text-align: justify!important;
+    text-align-last: justify!important;
+}

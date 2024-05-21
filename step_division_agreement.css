@@ -1,0 +1,42 @@
+@media print {
+    .decedent_info{
+        margin-left: 110px;
+    }
+}
+
+.decedent_info{
+    margin-top:40px;
+}
+
+.decedent_info > ul{
+    padding: 0;
+    margin: 0;
+}
+
+.decedent_info li{
+    display: flex!important;
+}
+
+.decedent_info li > div:first-child{
+    margin-right:1rem;
+    width:115px;
+    display: block!important;
+    text-align: justify!important;
+    text-align-last: justify!important;
+}
+
+.property{
+    margin-left:3rem;
+}
+
+.property > div:not(:first-child){
+    margin-top:1rem
+}
+
+@media screen {
+    
+    .decedent_info{
+        display: flex!important;
+        justify-content: center!important;
+    }
+}
