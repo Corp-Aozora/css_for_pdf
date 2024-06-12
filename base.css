@@ -11,9 +11,23 @@ button{
     padding: 0;
 }
 
+button:focus {
+    outline: none; /* 既存のフォーカスアウトラインを無効にする */
+    box-shadow: 0 0 0 0.4rem rgba(0, 123, 255, 0.25)!important; /* ブルーのフォーカスリング */
+}
+
 /* aタグの下線を除外 */
 a{
     text-decoration: none!important;
+}
+
+/* hタグは全て太文字にする */
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700!important;
+}
+
+::placeholder{
+    text-align: center;
 }
 
 /* 手型のカーソルにする */
@@ -88,6 +102,10 @@ a{
     text-indent: 1rem!important;
 }
 
+.mt-2rem{
+    margin-top: 2rem!important;
+}
+
 /* ブートストラップのカードに影をつける用 */
 .shadow-sm-above {
     box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
@@ -131,6 +149,34 @@ a{
     top:-2px;
 }
 
+/* チェックマーク */
+.checkmark{
+    position: relative;
+}
+
+.checkmark::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: .5em;
+    left: -1em;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid rgb(25, 135, 84);
+    border-bottom: 2px solid rgb(25, 135, 84);
+    transform: rotate(-45deg);
+}
+
+/* 画面サイズに応じた改行をする要素に付与する ※max-widthの設定が必要 */
+.linebreak-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.linebreak-wrapper span{
+    display: inline;
+}
+
 /* SweetAlert2 ボタンの配置を変更する */
 .swal2-actions {
     display: flex;
@@ -145,14 +191,35 @@ a{
     order: 2; /* 「キャンセル」ボタンを右に配置 */
 }
 
-/* フォームのエラー表示枠 */
-.error_list{
-    max-width: 500px!important;
-}
-
 /* ラインのQRコード */
 .line-qr{
     max-width: 100px!important;
+}
+
+/* フォーム内のエラーメッセージ表示ラッパー */
+form .form-error-wrapper, .modal .form-error-wrapper{
+    font-weight: 700!important;
+    max-width: 500px;
+}
+
+form .form-error-wrapper{
+    background-color: var(--bs-danger-bg-subtle)!important;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+    border-radius: var(--bs-border-radius-lg)!important;
+    padding: 1rem!important;
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+}
+
+form label, 
+form .form-control,
+form .form-select,
+form span.input-group-text{
+    border-radius: 0!important;
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
 }
 
 /* レスポンシブ用 */
@@ -160,10 +227,35 @@ a{
     .lg-text-center{
         text-align: center!important;
     }
+
+    .lg-justify-content-center{
+        justify-content: center!important;
+    }
+
+    .lg-d-none{
+        display: none!important;
+    }
 }
 
 @media (max-width:767px){
     .md-text-center{
+        text-align: center!important;
+    }
+
+    /* フォーム内のエラーメッセージ表示ラッパー */
+    .form-error-wrapper{
+        padding-left: 0.5rem!important;
+        padding-right: 0.5rem!important;
+        text-align: center!important;
+    }
+
+    .md-w-100{
+        width: 100%!important;
+    }
+}
+
+@media (min-width:576px){
+    .text-md-center{
         text-align: center!important;
     }
 }
@@ -171,5 +263,23 @@ a{
 @media (max-width:575px){
     .sm-text-center{
         text-align: center!important;
+    }
+
+    .sm-mx-auto{
+        margin-right: auto!important;
+        margin-left: auto!important;
+    }
+
+    .sm-d-flex{
+        display: flex!important;
+    }
+
+    .sm-justify-content-center{
+        justify-content: center!important;
+    }
+
+    .sm-d-flex-center{
+        display: flex!important;
+        justify-content: center!important;
     }
 }
